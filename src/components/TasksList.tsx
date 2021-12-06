@@ -14,7 +14,7 @@ interface TasksListProps extends TouchableOpacityProps{
   editTask: (taskId: number, taskNewTitle: string ) => void;
 }
 
-export function TasksList({ tasks, toggleTaskDone, removeTask, ...rest }: TasksListProps) {
+export function TasksList({ tasks, toggleTaskDone, removeTask, editTask, ...rest }: TasksListProps) {
   return (
     <FlatList
       data={tasks}
@@ -29,6 +29,7 @@ export function TasksList({ tasks, toggleTaskDone, removeTask, ...rest }: TasksL
               item={item}
               toggleTaskDone={toggleTaskDone}
               removeTask={removeTask}
+              editTask={editTask}
             />
           </ItemWrapper>
         )
